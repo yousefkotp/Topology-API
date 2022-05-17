@@ -1,32 +1,37 @@
 import java.util.Map;
 import java.util.Objects;
 public class Resistor extends Component{
-    private Resistor resistor;
+    private Resistance resistance;
 
-    public Resistor(String type, String id, Map<String, String> netlist, Resistor resistor) {
+    public Resistor(String type, String id, Map<String, String> netlist, Resistance resistance) {
         super(type, id, netlist);
-        this.resistor = resistor;
+        this.resistance = resistance;
     }
 
-    public Resistor getResistor() {
-        return resistor;
+    public Resistance getResistance() {
+        return resistance;
     }
 
-    public void setResistor(Resistor resistor) {
-        this.resistor = resistor;
+    public void setResistance(Resistance resistance) {
+        this.resistance = resistance;
     }
 
     @Override
     public boolean equals(Object o) {
         if (o == null || getClass() != o.getClass()) return false;
-        Resistor resistor1 = (Resistor) o;
-        return Objects.equals(resistor, resistor1.resistor);
+        Resistor resistor = (Resistor) o;
+        return Objects.equals(resistance, resistor.resistance);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(resistance);
     }
 
     @Override
     public String toString() {
         return "Resistor{" +
-                "resistor=" + resistor +
+                "resistance=" + resistance +
                 '}';
     }
 }

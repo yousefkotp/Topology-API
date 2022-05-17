@@ -3,6 +3,12 @@ public class Resistance {
     private double min;
     private double max;
 
+    public Resistance(double def, double min, double max) {
+        this.def = def;
+        this.min = min;
+        this.max = max;
+    }
+
     public double getDef() {
         return def;
     }
