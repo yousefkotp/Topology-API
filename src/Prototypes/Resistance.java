@@ -35,7 +35,11 @@ public class Resistance {
 
     @Override
     public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
         Resistance that = (Resistance) o;
+
         if (Double.compare(that.def, def) != 0) return false;
         if (Double.compare(that.min, min) != 0) return false;
         return Double.compare(that.max, max) == 0;

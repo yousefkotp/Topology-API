@@ -19,9 +19,15 @@ public class Resistor extends Component{
 
     @Override
     public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        if (!super.equals(o)) return false;
+
         Resistor resistor = (Resistor) o;
+
         return resistance != null ? resistance.equals(resistor.resistance) : resistor.resistance == null;
     }
+
 
     @Override
     public String toString() {

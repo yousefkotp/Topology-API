@@ -38,12 +38,13 @@ public class Component {
 
     @Override
     public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
         Component component = (Component) o;
         if (type != null ? !type.equals(component.type) : component.type != null) return false;
         if (id != null ? !id.equals(component.id) : component.id != null) return false;
         return netlist != null ? netlist.equals(component.netlist) : component.netlist == null;
     }
-
 
     @Override
     public String toString() {

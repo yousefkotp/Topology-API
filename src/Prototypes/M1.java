@@ -35,7 +35,11 @@ public class M1 {
 
     @Override
     public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
         M1 m1 = (M1) o;
+
         if (Double.compare(m1.def, def) != 0) return false;
         if (Double.compare(m1.min, min) != 0) return false;
         return Double.compare(m1.max, max) == 0;
