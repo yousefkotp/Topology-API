@@ -1,10 +1,8 @@
 import java.io.IOException;
-import java.util.ArrayList;
 
 public class Main {
     public static void main(String[] args) throws IOException {
-        APIBackend api = APIBackend.createTopologyAPI();
-
+        API api = API.createTopologyAPI();
         api.readJSON("topology.json");    //The api stores the array of topologies within it
         //ArrayList<Topology> topologies = api.queryTopologies();
         //ArrayList<Component> components = api.queryDevices("top1");
