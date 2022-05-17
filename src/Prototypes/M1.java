@@ -33,13 +33,14 @@ public class M1 {
         this.max = max;
     }
 
-
     @Override
     public boolean equals(Object o) {
-        if (o == null || getClass() != o.getClass()) return false;
         M1 m1 = (M1) o;
-        return Double.compare(m1.def, def) == 0 && Double.compare(m1.min, min) == 0 && Double.compare(m1.max, max) == 0;
+        if (Double.compare(m1.def, def) != 0) return false;
+        if (Double.compare(m1.min, min) != 0) return false;
+        return Double.compare(m1.max, max) == 0;
     }
+
 
     @Override
     public String toString() {

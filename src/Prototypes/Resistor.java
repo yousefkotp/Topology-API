@@ -16,16 +16,11 @@ public class Resistor extends Component{
         this.resistance = resistance;
     }
 
-    @Override
-    public boolean equals(Object o) {
-        if (o == null || getClass() != o.getClass()) return false;
-        Resistor resistor = (Resistor) o;
-        return Objects.equals(resistance, resistor.resistance);
-    }
 
     @Override
-    public int hashCode() {
-        return Objects.hash(resistance);
+    public boolean equals(Object o) {
+        Resistor resistor = (Resistor) o;
+        return resistance != null ? resistance.equals(resistor.resistance) : resistor.resistance == null;
     }
 
     @Override

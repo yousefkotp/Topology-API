@@ -18,9 +18,8 @@ public class Nmos extends Component{
 
     @Override
     public boolean equals(Object o) {
-        if (o == null || getClass() != o.getClass()) return false;
         Nmos nmos = (Nmos) o;
-        return Objects.equals(m1, nmos.m1);
+        return m1 != null ? m1.equals(nmos.m1) : nmos.m1 == null;
     }
 
     @Override

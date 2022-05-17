@@ -38,10 +38,12 @@ public class Component {
 
     @Override
     public boolean equals(Object o) {
-        if (o == null || getClass() != o.getClass()) return false;
         Component component = (Component) o;
-        return id == component.id && Objects.equals(type, component.type) && Objects.equals(netlist, component.netlist);
+        if (type != null ? !type.equals(component.type) : component.type != null) return false;
+        if (id != null ? !id.equals(component.id) : component.id != null) return false;
+        return netlist != null ? netlist.equals(component.netlist) : component.netlist == null;
     }
+
 
     @Override
     public String toString() {

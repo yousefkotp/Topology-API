@@ -32,10 +32,11 @@ public class Topology {
 
     @Override
     public boolean equals(Object o) {
-        if (o == null || getClass() != o.getClass()) return false;
         Topology topology = (Topology) o;
-        return Objects.equals(id, topology.id) && Objects.equals(components, topology.components);
+        if (id != null ? !id.equals(topology.id) : topology.id != null) return false;
+        return components != null ? components.equals(topology.components) : topology.components == null;
     }
+
 
     // Overridden toString method
     @Override

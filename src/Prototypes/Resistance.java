@@ -35,10 +35,12 @@ public class Resistance {
 
     @Override
     public boolean equals(Object o) {
-        if (o == null || getClass() != o.getClass()) return false;
         Resistance that = (Resistance) o;
-        return Double.compare(that.def, def) == 0 && Double.compare(that.min, min) == 0 && Double.compare(that.max, max) == 0;
+        if (Double.compare(that.def, def) != 0) return false;
+        if (Double.compare(that.min, min) != 0) return false;
+        return Double.compare(that.max, max) == 0;
     }
+
 
     @Override
     public String toString() {

@@ -7,31 +7,40 @@ import java.util.ArrayList;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
-public class API {
-    private static API api=null;
+public class TopologyAPI {
+    private static TopologyAPI api=null;
     private final ArrayList<Topology>topologies;
 
     //private constructor for singleton design pattern
-    private API() {
+    private TopologyAPI() {
         topologies = new ArrayList<>();
     }
-    public static API createTopologyAPI(){
+    public static TopologyAPI createTopologyAPI(){
         if(api==null)
-            api= new API();
+            api= new TopologyAPI();
         return api;
     }
 
     //Deserialization
-    public void readJSON(String fileName) throws IOException {
+    public Topology readJSON(String fileName) throws IOException {
         //converting JSON file being read into a string
         String s = new String(Files.readAllBytes(Path.of(fileName)));
         //making the string ready to create new object using Gson
         Topology topology = new Gson().fromJson(s,Topology.class);
-        topologies.add(topology);
 
+        boolean flag =false;            //flag to find if the topology has been previously inserted
+        for(Topology t : topologies){
+            if(t.equals(topology)){
+                flag =true;
+                break;
+            }
+        }
+        if(!flag)
+            topologies.add(topology);
+        return topology;
     }
 
-
+    //writing topology into json file remove the topology from the topologies list
     public boolean writeJSON(String topologyID) throws IOException {
         for(Topology t : topologies){
             if(t.getId().equals(topologyID)){
