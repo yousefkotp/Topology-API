@@ -2,21 +2,21 @@ import java.util.ArrayList;
 import java.util.Objects;
 
 public class Topology {
-    private int id;
+    private String id;
     private ArrayList<Component> components;
 
     // Constructor
-    public Topology(int id, ArrayList<Component> components) {
+    public Topology(String id, ArrayList<Component> components) {
         this.id = id;
         this.components = components;
     }
 
     // Getters and Setters
-    public int getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(String id) {
         this.id = id;
     }
 

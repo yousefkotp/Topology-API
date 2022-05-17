@@ -4,6 +4,7 @@ import java.util.ArrayList;
 public class APIBackend implements API{
     private static APIBackend api=null;
     private ArrayList<Topology>topologies;
+
     //Empty constructor for singleton design pattern
     private APIBackend() {
         topologies = new ArrayList<Topology>();
@@ -27,21 +28,42 @@ public class APIBackend implements API{
 
     @Override
     public ArrayList<Topology> queryTopologies() {
+        return this.topologies;
+    }
+
+    @Override
+    public ArrayList<Topology> deleteTopology(String topologyID) {
+        for(Topology t : topologies){
+            if(t.getId().equals(topologyID)){
+                topologies.remove(t);
+                break;
+            }
+        }
+        return topologies;
+    }
+
+    @Override
+    public ArrayList<Component> queryDevices(String topologyID) {
+        for(Topology t :topologies){
+            if(t.getId().equals(topologyID)){
+                return t.getComponents();
+            }
+        }
         return null;
     }
 
     @Override
-    public boolean deleteTopology(int topologyID) {
-        return false;
-    }
-
-    @Override
-    public ArrayList<Component> queryDevices(int topologyID) {
-        return null;
-    }
-
-    @Override
-    public ArrayList<Component> queryDevicesWithNetlistNode(String topologyID, int NetlistNodeID) {
-        return null;
+    public ArrayList<Component> queryDevicesWithNetlistNode(String topologyID, String NetlistNodeID) {
+        ArrayList<Component> components = new ArrayList<>();
+        for(Topology t : topologies){
+            if(t.getId().equals(topologyID)){
+                for( Component c : t.getComponents()){
+                    if(c.getId().equals(NetlistNodeID)){
+                        components.add(c);
+                    }
+                }
+            }
+        }
+        return components;
     }
 }

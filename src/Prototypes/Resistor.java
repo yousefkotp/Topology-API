@@ -7,7 +7,7 @@ public class Resistor extends Component{
     private double min;
     private double max;
 
-    public Resistor(String type, int id, Map<String, String> netlist, double def, double min, double max) {
+    public Resistor(String type, String id, Map<String, String> netlist, double def, double min, double max) {
         super(type, id, netlist);
         this.def = def;
         this.min = min;

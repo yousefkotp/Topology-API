@@ -3,10 +3,10 @@ import java.util.Objects;
 
 public class Component {
     private String type;
-    private int id;
+    private String id;
     private Map<String,String> netlist;
 
-    public Component(String type, int id, Map<String, String> netlist) {
+    public Component(String type, String id, Map<String, String> netlist) {
         this.type = type;
         this.id = id;
         this.netlist = netlist;
@@ -20,11 +20,11 @@ public class Component {
         this.type = type;
     }
 
-    public int getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(String id) {
         this.id = id;
     }
 
