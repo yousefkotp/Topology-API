@@ -3,7 +3,7 @@ import java.util.ArrayList;
 
 public class APIBackend implements API{
     private static APIBackend api=null;
-    private ArrayList<Topology>topologies;
+    private final ArrayList<Topology>topologies;
 
     //Empty constructor for singleton design pattern
     private APIBackend() {
