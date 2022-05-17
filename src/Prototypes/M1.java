@@ -1,18 +1,9 @@
-import org.codehaus.jackson.annotate.JsonCreator;
-import org.codehaus.jackson.annotate.JsonProperty;
-
-import java.util.Objects;
-
 public class M1 {
-    @JsonProperty("default")
     private double def;
-    @JsonProperty("min")
     private double min;
-    @JsonProperty("max")
     private double max;
 
-    @JsonCreator
-    public M1(@JsonProperty("default") double def, @JsonProperty("min") double min,@JsonProperty("max") double max) {
+    public M1(double def, double min,double max) {
         this.def = def;
         this.min = min;
         this.max = max;
@@ -41,6 +32,7 @@ public class M1 {
     public void setMax(double max) {
         this.max = max;
     }
+
 
     @Override
     public boolean equals(Object o) {
