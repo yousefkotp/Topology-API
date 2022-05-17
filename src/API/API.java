@@ -8,7 +8,7 @@ public interface API {
 
     ArrayList<Topology> queryTopologies();
 
-    ArrayList<Topology> deleteTopology(String topologyID);
+    boolean deleteTopology(String topologyID);
 
     ArrayList<Component> queryDevices(String topologyID);
 

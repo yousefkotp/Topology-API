@@ -7,7 +7,7 @@ public class APIBackend implements API{
 
     //Empty constructor for singleton design pattern
     private APIBackend() {
-        topologies = new ArrayList<Topology>();
+        topologies = new ArrayList<>();
     }
     public static APIBackend createTopologyAPI(){
         if(api==null)
@@ -28,18 +28,18 @@ public class APIBackend implements API{
 
     @Override
     public ArrayList<Topology> queryTopologies() {
-        return this.topologies;
+        return topologies;
     }
 
     @Override
-    public ArrayList<Topology> deleteTopology(String topologyID) {
+    public boolean deleteTopology(String topologyID) {
         for(Topology t : topologies){
             if(t.getId().equals(topologyID)){
                 topologies.remove(t);
-                break;
+                return true;
             }
         }
-        return topologies;
+        return false;
     }
 
     @Override
