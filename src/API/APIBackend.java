@@ -17,8 +17,9 @@ public class APIBackend implements API{
 
 
     @Override
-    public Topology readJSON(String fileName) throws IOException {
-        return null;
+    public ArrayList<Topology> readJSON(String fileName) throws IOException {
+
+        return topologies;
     }
 
     @Override

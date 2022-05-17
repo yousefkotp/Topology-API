@@ -1,56 +1,32 @@
-import java.util.ArrayList;
 import java.util.Map;
 import java.util.Objects;
-
 public class Resistor extends Component{
-    private double def;
-    private double min;
-    private double max;
+    private Resistor resistor;
 
-    public Resistor(String type, String id, Map<String, String> netlist, double def, double min, double max) {
+    public Resistor(String type, String id, Map<String, String> netlist, Resistor resistor) {
         super(type, id, netlist);
-        this.def = def;
-        this.min = min;
-        this.max = max;
+        this.resistor = resistor;
     }
 
-    public double getDef() {
-        return def;
+    public Resistor getResistor() {
+        return resistor;
     }
 
-    public void setDef(double def) {
-        this.def = def;
-    }
-
-    public double getMin() {
-        return min;
-    }
-
-    public void setMin(double min) {
-        this.min = min;
-    }
-
-    public double getMax() {
-        return max;
-    }
-
-    public void setMax(double max) {
-        this.max = max;
+    public void setResistor(Resistor resistor) {
+        this.resistor = resistor;
     }
 
     @Override
     public boolean equals(Object o) {
         if (o == null || getClass() != o.getClass()) return false;
-        Resistor resistor = (Resistor) o;
-        return Double.compare(resistor.def, def) == 0 && Double.compare(resistor.min, min) == 0 && Double.compare(resistor.max, max) == 0;
+        Resistor resistor1 = (Resistor) o;
+        return Objects.equals(resistor, resistor1.resistor);
     }
 
     @Override
     public String toString() {
         return "Resistor{" +
-                "def=" + def +
-                ", min=" + min +
-                ", max=" + max +
+                "resistor=" + resistor +
                 '}';
     }
 }

@@ -1,22 +1,9 @@
-import org.codehaus.jackson.annotate.JsonCreator;
-import org.codehaus.jackson.annotate.JsonProperty;
-
 import java.util.Objects;
 
-public class M1 {
-    @JsonProperty("default")
+public class Resistance {
     private double def;
-    @JsonProperty("min")
     private double min;
-    @JsonProperty("max")
     private double max;
-
-    @JsonCreator
-    public M1(@JsonProperty("default") double def, @JsonProperty("min") double min,@JsonProperty("max") double max) {
-        this.def = def;
-        this.min = min;
-        this.max = max;
-    }
 
     public double getDef() {
         return def;
@@ -45,13 +32,13 @@ public class M1 {
     @Override
     public boolean equals(Object o) {
         if (o == null || getClass() != o.getClass()) return false;
-        M1 m1 = (M1) o;
-        return Double.compare(m1.def, def) == 0 && Double.compare(m1.min, min) == 0 && Double.compare(m1.max, max) == 0;
+        Resistance that = (Resistance) o;
+        return Double.compare(that.def, def) == 0 && Double.compare(that.min, min) == 0 && Double.compare(that.max, max) == 0;
     }
 
     @Override
     public String toString() {
-        return "M1{" +
+        return "Resistance{" +
                 "def=" + def +
                 ", min=" + min +
                 ", max=" + max +

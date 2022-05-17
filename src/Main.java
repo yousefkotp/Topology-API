@@ -9,8 +9,8 @@ public class Main {
         //ArrayList<Topology> topologies = api.queryTopologies();
         //ArrayList<Component> components = api.queryDevices("top1");
         //components = api.queryDevicesWithNetlistNode("t1","res1");
-         //api.deleteTopology("top1");
-         //api.writeJSON("result.json");
+        //api.deleteTopology("top1");
+        //api.writeJSON("result.json");
 
     }
 }

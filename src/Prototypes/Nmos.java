@@ -1,11 +1,10 @@
 import java.util.ArrayList;
 import java.util.Map;
 import java.util.Objects;
-
 public class Nmos extends Component{
     private M1 m1;
 
-    public Nmos(String type, String id, Map<String, String> netlist, M1 m1) {
+    public Nmos(String type,String id,Map<String, String> netlist, M1 m1) {
         super(type, id, netlist);
         this.m1 = m1;
     }

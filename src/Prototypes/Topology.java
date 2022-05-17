@@ -1,6 +1,5 @@
 import java.util.ArrayList;
 import java.util.Objects;
-
 public class Topology {
     private String id;
     private ArrayList<Component> components;
@@ -29,11 +28,18 @@ public class Topology {
     }
 
     //Overridden equals method
+
+
     @Override
     public boolean equals(Object o) {
         if (o == null || getClass() != o.getClass()) return false;
         Topology topology = (Topology) o;
-        return id == topology.id && Objects.equals(components, topology.components);
+        return Objects.equals(id, topology.id) && Objects.equals(components, topology.components);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, components);
     }
 
     // Overridden toString method

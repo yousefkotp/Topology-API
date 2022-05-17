@@ -2,7 +2,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 
 public interface API {
-    Topology readJSON(String fileName) throws IOException;
+    ArrayList<Topology> readJSON(String fileName) throws IOException;
 
     boolean writeJSON(String topologyID) throws IOException;
 
