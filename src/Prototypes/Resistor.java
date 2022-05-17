@@ -1,5 +1,4 @@
 import java.util.Map;
-import java.util.Objects;
 public class Resistor extends Component{
     private Resistance resistance;
 
