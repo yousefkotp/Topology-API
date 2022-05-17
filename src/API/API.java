@@ -1,19 +1,11 @@
-
 import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.lang.reflect.Type;
 import java.nio.file.Files;
 import java.nio.file.Path;
-import java.nio.file.Paths;
 import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Map;
-
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
-import com.google.gson.reflect.TypeToken;
 
 public class API {
     private static API api=null;
@@ -31,12 +23,12 @@ public class API {
 
     //Deserialization
     public void readJSON(String fileName) throws IOException {
-
+        //converting JSON file being read into a string
         String s = new String(Files.readAllBytes(Path.of(fileName)));
+        //making the string ready to create new object using Gson
         Topology topology = new Gson().fromJson(s,Topology.class);
         topologies.add(topology);
-        //This only reads one topolgy bacause that's how the JSON file is
-        //aka the JSON file doesn't start with square brackets
+
     }
 
 
@@ -68,7 +60,7 @@ public class API {
 
     public boolean deleteTopology(String topologyID) {
         for(Topology t : topologies){
-            if(t.getId().equals(topologyID)){
+            if(t.getId().equals(topologyID)){       //if we found the required topology
                 topologies.remove(t);
                 return true;
             }
@@ -78,7 +70,7 @@ public class API {
 
     public ArrayList<Component> queryDevices(String topologyID) {
         for(Topology t :topologies){
-            if(t.getId().equals(topologyID)){
+            if(t.getId().equals(topologyID)){           //if we found the required topology
                 return t.getComponents();
             }
         }
@@ -90,7 +82,7 @@ public class API {
         for(Topology t : topologies){
             if(t.getId().equals(topologyID)){
                 for( Component c : t.getComponents()){
-                    if(c.getId().equals(NetlistNodeID)){
+                    if(c.getId().equals(NetlistNodeID)){            //if we found required device inside the required topology
                         components.add(c);
                     }
                 }

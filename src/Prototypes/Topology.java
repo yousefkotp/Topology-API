@@ -37,11 +37,6 @@ public class Topology {
         return Objects.equals(id, topology.id) && Objects.equals(components, topology.components);
     }
 
-    @Override
-    public int hashCode() {
-        return Objects.hash(id, components);
-    }
-
     // Overridden toString method
     @Override
     public String toString() {
