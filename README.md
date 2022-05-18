@@ -21,7 +21,7 @@ A simple API to access, manage and store device topologies in JSON formatted fil
 ## Tools
 1. Java
 2. IntelliJ IDEA (IDE)
-3. [Jackson]([https://github.com/google/gson](https://github.com/FasterXML/jackson)) (JSON Parser)
+3. [Jackson](https://github.com/FasterXML/jackson) (JSON Parser)
 4. Maven (Building Tool)
 5. [CodeMR](https://www.codemr.co.uk/) (Code Analysis Tool)
 6. [JUnit](https://junit.org/junit5/) (Testing)
