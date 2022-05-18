@@ -1,7 +1,18 @@
 # Topology-API
 A simple API to access, manage and store device topologies in JSON formatted file.
 ## Table of Content
-
+- [Topology-API](#topology-api)
+  * [API Functionalities](#api-functionalities)
+  * [Tools](#tools)
+  * [Why Java?](#why-java-)
+  * [Dependencies](#dependencies)
+  * [Deployment](#deployment)
+  * [Design Patterns](#design-patterns)
+    + [Code Snippet](#code-snippet)
+  * [Code Analysis](#code-analysis)
+  * [Testing](#testing)
+  * [Usage](#usage)
+  * [Author](#author)
 ## API Functionalities
 1. Read and write topologies to and from disk.
 2. Stores multiple topologies in memory.
