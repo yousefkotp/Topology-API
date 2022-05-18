@@ -1,13 +1,24 @@
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonSubTypes;
+import com.fasterxml.jackson.annotation.JsonTypeInfo;
+
 import java.util.Map;
+@JsonTypeInfo(use = JsonTypeInfo.Id.NAME, property = "type")
+@JsonSubTypes({
+        @JsonSubTypes.Type(value = Resistor.class, name = "resistor"),
+        @JsonSubTypes.Type(value = Nmos.class, name = "nmos")
+})
+@JsonIgnoreProperties("type")
 
 public abstract class Component {
+    @JsonProperty("type")
     private String type;
+    @JsonProperty("id")
     private String id;
+    @JsonProperty("netlist")
     private Map<String,String> netlist;
 
-    public Component() {
-
-    }
 
     public Component(String id, Map<String, String> netlist) {
         this.id = id;

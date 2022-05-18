@@ -1,9 +1,16 @@
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonPropertyOrder;
+
+@JsonPropertyOrder({"default", "min", "max"})
 public class M1 {
+    @JsonProperty("default")
     private double def;
+    @JsonProperty("min")
     private double min;
+    @JsonProperty("max")
     private double max;
 
-    public M1(double def, double min,double max) {
+    public M1(@JsonProperty("default") double def, @JsonProperty("min") double min,@JsonProperty("max") double max) {
         this.def = def;
         this.min = min;
         this.max = max;

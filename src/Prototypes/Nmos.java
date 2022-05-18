@@ -1,8 +1,12 @@
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonPropertyOrder;
+
 import java.util.Map;
+@JsonPropertyOrder({"type", "id", "m(1)", "netlist"})
 public class Nmos extends Component{
     private M1 m1;
 
-    public Nmos(String type,String id,M1 m1,Map<String, String> netlist) {
+    public Nmos(@JsonProperty("type") String type, @JsonProperty("id") String id,@JsonProperty("m(1)") M1 m1,@JsonProperty("netlist") Map<String, String> netlist) {
         super(type,id,netlist);
         this.m1 = m1;
     }

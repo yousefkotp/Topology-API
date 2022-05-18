@@ -1,8 +1,14 @@
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonPropertyOrder;
+
 import java.util.Map;
+@JsonPropertyOrder({"type", "id", "resistance", "netlist"})
 public class Resistor extends Component{
+    @JsonProperty("resistance")
     private Resistance resistance;
 
-    public Resistor(String type, String id, Map<String, String> netlist, Resistance resistance) {
+
+    public Resistor(@JsonProperty("type") String type,@JsonProperty("id")  String id, @JsonProperty("resistance") Resistance resistance, @JsonProperty("netlist") Map<String, String> netlist) {
         super(type,id,netlist);
         this.resistance = resistance;
     }

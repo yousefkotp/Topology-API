@@ -1,13 +1,13 @@
+import com.fasterxml.jackson.databind.ObjectMapper;
+
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Map;
-
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
 
 public class TopologyAPI {
     private static TopologyAPI api=null;
@@ -28,10 +28,7 @@ public class TopologyAPI {
 
     //Deserialization
     public Topology readJSON(String fileName) throws IOException {
-        //converting JSON file being read into a string
-        String s = new String(Files.readAllBytes(Path.of(fileName)));
-        //making the string ready to create new object using Gson
-        Topology topology = new Gson().fromJson(s,Topology.class);
+        Topology topology = new ObjectMapper().readValue(new File(fileName),Topology.class);
 
         boolean flag =false;            //flag to find if the topology has been previously inserted
         for(Topology t : topologies){
@@ -50,16 +47,9 @@ public class TopologyAPI {
         for(Topology t : topologies){
             if(t.getId().equals(topologyID)){
                 //Serialization
-                // Creating Gson object with pretty painting to put new lines, etc.
-                Gson gson = new GsonBuilder().setPrettyPrinting().create();
-                //String representing the topology which will be written to the new file
-                String s = gson.toJson(new Topology(t.getId(),t.getComponents()));
-                //Writing to the file
-                File file = new File(t.getId()+".json");
-                FileWriter fileWriter = new FileWriter(file);
-                fileWriter.write(s);
-                fileWriter.flush();
-                fileWriter.close();
+                ObjectMapper objectMapper = new ObjectMapper();
+                objectMapper.writeValue(new File(t.getId()+".json"),t);
+
                 //removing topology from the list after being written to a file
                 topologies.remove(t);
                 return true;

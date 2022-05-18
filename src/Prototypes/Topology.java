@@ -1,10 +1,16 @@
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonPropertyOrder;
+
 import java.util.ArrayList;
+@JsonPropertyOrder({"id", "components"})
 public class Topology {
+    @JsonProperty("id")
     private String id;
+    @JsonProperty("components")
     private ArrayList<Component> components;
 
     // Constructor
-    public Topology(String id, ArrayList<Component> components) {
+    public Topology(@JsonProperty("id") String id, @JsonProperty("components") ArrayList<Component> components) {
         this.id = id;
         this.components = components;
     }

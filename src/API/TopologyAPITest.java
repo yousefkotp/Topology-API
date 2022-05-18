@@ -25,7 +25,7 @@ public class TopologyAPITest {
         netlistNmos.put("drain", "n1");
         netlistNmos.put("gate", "vin");
         netlistNmos.put("source", "vss");
-        Resistor res = new Resistor("resistor","res1", netlistRes, new Resistance(100, 10, 1000));
+        Resistor res = new Resistor("resistor","res1", new Resistance(100, 10, 1000),netlistRes);
         Nmos nmos = new Nmos("nmos","m1" , new M1(1.5, 1, 2),netlistNmos);
         ArrayList<Component> components = new ArrayList<Component>();
         components.add(res);

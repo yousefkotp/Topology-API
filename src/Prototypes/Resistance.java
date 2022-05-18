@@ -1,9 +1,18 @@
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonPropertyOrder;
+
+@JsonPropertyOrder({"def", "min", "max"})
 public class Resistance {
+    @JsonProperty("default")
     private double def;
+    @JsonProperty("min")
     private double min;
+    @JsonProperty("max")
     private double max;
 
-    public Resistance(double def, double min, double max) {
+    @JsonCreator
+    public Resistance(@JsonProperty("default") double def, @JsonProperty("min")double min, @JsonProperty("max")double max) {
         this.def = def;
         this.min = min;
         this.max = max;
