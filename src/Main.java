@@ -10,7 +10,7 @@ public class Main {
                             //Testing statements
         //ArrayList<Topology> topologies = api.queryTopologies();
         //ArrayList<Component> components = api.queryDevices("top1");
-        //component = api.queryDevicesWithNetlistNode("top1","res1");
+        //ArrayList<Component> components = api.queryDevicesWithNetlistNode("top1","res1");
         //api.deleteTopology("top1");
 
         api.writeJSON("top1");
