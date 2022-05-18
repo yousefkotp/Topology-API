@@ -5,7 +5,9 @@ public class Main {
     public static void main(String[] args) throws IOException {
         TopologyAPI api = TopologyAPI.createTopologyAPI();
         Topology topology = api.readJSON("topology.json");
-        Resistor r = (Resistor) topology.getComponents().get(0);
+        Component r = topology.getComponents().get(0);
+        Resistor x = (Resistor) r;
+        System.out.println(x.getResistance());
 
                             //Another Testing statements
         //Topology t1 = api.readJSON("topology.json");
