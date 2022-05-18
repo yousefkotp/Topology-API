@@ -3,7 +3,9 @@ public class Resistor extends Component{
     private Resistance resistance;
 
     public Resistor(String type, String id, Map<String, String> netlist, Resistance resistance) {
-        super(type, id, netlist);
+        this.setType(type);
+        this.setId(id);
+        this.setNetlist(netlist);
         this.resistance = resistance;
     }
 

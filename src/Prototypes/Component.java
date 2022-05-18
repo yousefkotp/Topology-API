@@ -1,15 +1,15 @@
 import java.util.Map;
 
-public class Component {
-    protected String type;
+public abstract class Component {
+    private String type;
+
+    public Component() {
+
+    }
+
     private String id;
     private Map<String,String> netlist;
 
-    public Component(String type, String id, Map<String, String> netlist) {
-        this.type = type;
-        this.id = id;
-        this.netlist = netlist;
-    }
 
     public String getType() {
         return type;
