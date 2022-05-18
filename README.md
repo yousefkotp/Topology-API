@@ -30,8 +30,10 @@ A simple API to access, manage and store device topologies in JSON formatted fil
 2. **Serialization and Deserialization** of JSON file is effortless using Java.
 3. Since **Project is Object Oriented**, meaning that considering Topology and Components as objects would save us time and effort, Java would be the best programming language to write the project with
 ## Dependencies
-Add the following Maven repository
+Add the following Maven repositories
 > com.google.code.gson:gson:2.9.0
+
+> org.junit.jupiter:junit-jupiter:5.8.1
 ## Deployment
 1. Run "Main" class as your main class.
 
