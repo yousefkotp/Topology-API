@@ -4,7 +4,7 @@ A simple API to access, manage and store device topologies in JSON formatted fil
 - [Topology-API](#topology-api)
   * [API Functionalities](#api-functionalities)
   * [Tools](#tools)
-  * [Why Java?](#why-java-)
+  * [Why Java?](#why-java-?)
   * [Dependencies](#dependencies)
   * [Deployment](#deployment)
   * [Design Patterns](#design-patterns)
