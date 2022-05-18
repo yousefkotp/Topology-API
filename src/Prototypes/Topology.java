@@ -29,20 +29,17 @@ public class Topology {
     //Overridden equals method
     @Override
     public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-
         Topology topology = (Topology) o;
-
-        if (id != null ? !id.equals(topology.id) : topology.id != null) return false;
         return components != null ? components.equals(topology.components) : topology.components == null;
     }
 
     // Overridden toString method
+
+
     @Override
     public String toString() {
         return "Topology{" +
-                "id=" + id +
+                "id='" + id + '\'' +
                 ", components=" + components +
                 '}';
     }

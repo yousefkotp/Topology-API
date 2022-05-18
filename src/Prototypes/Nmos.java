@@ -17,20 +17,17 @@ public class Nmos extends Component{
 
     @Override
     public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        if (!super.equals(o)) return false;
-
         Nmos nmos = (Nmos) o;
-
         return m1 != null ? m1.equals(nmos.m1) : nmos.m1 == null;
     }
 
 
     @Override
     public String toString() {
-        return "Nmos{" +
-                "m1=" + m1 +
+        return "Component{" +
+                "type='" + this.getType() + '\'' +
+                ", id='" + this.getId() + '\'' +
+                ", netlist=" + this.getNetlist() +
                 '}';
     }
 }

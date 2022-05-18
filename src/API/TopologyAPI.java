@@ -4,6 +4,8 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.ArrayList;
+import java.util.Map;
+
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
@@ -19,6 +21,9 @@ public class TopologyAPI {
         if(api==null)
             api= new TopologyAPI();
         return api;
+    }
+    public static void deleteTopologyAPI (){
+        api= null;
     }
 
     //Deserialization
@@ -86,13 +91,15 @@ public class TopologyAPI {
         return null;
     }
 
-    public ArrayList<Component> queryDevicesWithNetlistNode(String topologyID, String NetlistNodeID) {
+    public ArrayList<Component> queryDevicesWithNetlistNode(String topologyID, String netlistNodeID) {
         ArrayList<Component> components = new ArrayList<>();
         for(Topology t : topologies){
             if(t.getId().equals(topologyID)){
                 for( Component c : t.getComponents()){
-                    if(c.getId().equals(NetlistNodeID)){            //if we found required device inside the required topology
-                        components.add(c);
+                    for (Map.Entry<String,String> entry : c.getNetlist().entrySet()){
+                        if(entry.getValue().equals(netlistNodeID)){
+                            components.add(c);
+                        }
                     }
                 }
             }
