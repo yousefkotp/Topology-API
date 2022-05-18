@@ -1,4 +1,6 @@
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.SerializationFeature;
+
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -42,7 +44,7 @@ public class TopologyAPI {
         for(Topology t : topologies){
             if(t.getId().equals(topologyID)){
                 //Serialization
-                ObjectMapper objectMapper = new ObjectMapper();
+                ObjectMapper objectMapper = new ObjectMapper().enable(SerializationFeature.INDENT_OUTPUT);
                 objectMapper.writeValue(new File(t.getId()+".json"),t);
 
                 //removing topology from the list after being written to a file
