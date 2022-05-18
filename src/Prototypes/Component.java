@@ -1,7 +1,7 @@
 import java.util.Map;
 
 public class Component {
-    private String type;
+    protected String type;
     private String id;
     private Map<String,String> netlist;
 

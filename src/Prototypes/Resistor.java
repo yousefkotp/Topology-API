@@ -22,12 +22,12 @@ public class Resistor extends Component{
         return resistance != null ? resistance.equals(resistor.resistance) : resistor.resistance == null;
     }
 
-
     @Override
     public String toString() {
         return "Component{" +
                 "type='" + this.getType() + '\'' +
                 ", id='" + this.getId() + '\'' +
+                this.getResistance()+
                 ", netlist=" + this.getNetlist() +
                 '}';
     }
