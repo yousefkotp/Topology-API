@@ -13,6 +13,7 @@ A simple API to access, manage and store device topologies in JSON formatted fil
   * [Testing](#testing)
   * [Usage](#usage)
   * [Author](#author)
+
 ## API Functionalities
 1. Read and write topologies to and from disk.
 2. Stores multiple topologies in memory.
