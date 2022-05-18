@@ -1,5 +1,5 @@
 # Topology-API
-A simple API to access, manage and store device topologies in JSON fromatted file.
+A simple API to access, manage and store device topologies in JSON formatted file.
 ## Table of Content
 
 ## API Functionalities
