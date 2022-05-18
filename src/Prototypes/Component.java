@@ -9,7 +9,6 @@ import java.util.Map;
         @JsonSubTypes.Type(value = Resistor.class, name = "resistor"),
         @JsonSubTypes.Type(value = Nmos.class, name = "nmos")
 })
-@JsonIgnoreProperties("type")
 
 public abstract class Component {
     @JsonProperty("type")
