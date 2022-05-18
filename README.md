@@ -31,7 +31,7 @@ A simple API to access, manage and store device topologies in JSON formatted fil
 3. Since **Project is Object Oriented**, meaning that considering Topology and Components as objects would save us time and effort, Java would be the best programming language to write the project with
 ## Dependencies
 Add the following Maven repositories
-> com.google.code.gson:gson:2.9.0
+> org.codeartisans:org.json:20161124
 
 > org.junit.jupiter:junit-jupiter:5.8.1
 ## Deployment
@@ -63,7 +63,7 @@ Since we only need one instance of the API, the Singleton Design Pattern is appl
 ![image](https://user-images.githubusercontent.com/41492875/168950341-0c9d4369-0929-4046-89ca-12942efb3bb4.png)
 
 ## Testing
-
+To run the test, head to TopologyAPITest class withing the API folder and run it.
 ## Usage
 1. Read a topology from JSON file.
 ```Java
