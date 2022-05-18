@@ -3,7 +3,7 @@ public class Nmos extends Component{
     private M1 m1;
 
     public Nmos(String type,String id,M1 m1,Map<String, String> netlist) {
-       super(type,id,netlist);
+        super(type,id,netlist);
         this.m1 = m1;
     }
 

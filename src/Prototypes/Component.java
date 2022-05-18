@@ -1,9 +1,18 @@
 import java.util.Map;
 
-public class Component {
+public abstract class Component {
     private String type;
     private String id;
     private Map<String,String> netlist;
+
+    public Component() {
+
+    }
+
+    public Component(String id, Map<String, String> netlist) {
+        this.id = id;
+        this.netlist = netlist;
+    }
 
     public Component(String type, String id, Map<String, String> netlist) {
         this.type = type;
@@ -41,12 +50,4 @@ public class Component {
         return netlist != null ? netlist.equals(component.netlist) : component.netlist == null;
     }
 
-    @Override
-    public String toString() {
-        return "Component{" +
-                "type='" + type + '\'' +
-                ", id='" + id + '\'' +
-                ", netlist=" + netlist +
-                '}';
-    }
 }
