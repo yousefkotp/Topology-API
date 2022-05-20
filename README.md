@@ -35,26 +35,13 @@ A simple API to access, manage and store device topologies in JSON formatted fil
 ## Dependencies
 Add the following Maven repositories
 ```Java
- <dependency>
-  <groupId>com.fasterxml.jackson.core</groupId>
-  <artifactId>jackson-annotations</artifactId>
-  <version>2.13.3</version>
- </dependency>
+fasterxml.jackson.core.annotations
 ```
 ```Java
- <dependency>
-  <groupId>com.fasterxml.jackson.core</groupId>
-  <artifactId>jackson-databind</artifactId>
-  <version>2.12.2</version>
- </dependency>
+fasterxml.jackson.core.databind
 ```
 ```Java
- <dependency>
-  <groupId>org.junit.jupiter</groupId>
-  <artifactId>junit-jupiter-api</artifactId>
-  <version>5.8.1</version>
-  <scope>compile</scope>
- </dependency>
+org.junit.jupiter:junit-jupiter:5.8.1
 ```
 
 ## Deployment
