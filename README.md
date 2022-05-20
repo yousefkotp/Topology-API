@@ -54,7 +54,8 @@ Add the following Maven repositories
   <artifactId>junit-jupiter-api</artifactId>
   <version>5.8.1</version>
   <scope>compile</scope>
- </dependency>```
+ </dependency>
+ ```
 
 ## Deployment
 1. Run "Main" class as your main class.
