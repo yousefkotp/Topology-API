@@ -11,8 +11,10 @@ A simple API to access, manage and store device topologies in JSON formatted fil
     + [Code Snippet](#code-snippet)
   * [Code Analysis](#code-analysis)
   * [Testing](#testing)
+  * [Class Diagram](#class-diagram)
   * [Usage](#usage)
   * [Author](#author)
+  
 
 ## API Functionalities
 1. Read and write topologies to and from disk.
@@ -65,6 +67,9 @@ Since we only need one instance of the API, the Singleton Design Pattern is appl
 
 ## Testing
 To run the test, head to TopologyAPITest class withing the API folder and run it.
+## Class Diagram
+![ClassDiagram png](https://user-images.githubusercontent.com/41492875/169536959-dc9a3c8a-910d-43eb-8c90-fbbfd05716a6.png)
+
 ## Usage
 1. Read a topology from JSON file.
 ```Java
